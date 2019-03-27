@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zipit145/incplanback/issues"
   },
-  "homepage": "https://github.com/zipit145/incplanback#readme"
+  "homepage": "https://github.com/zipit145/incplanback#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
