@@ -1,0 +1,19 @@
+{
+  "name": "incplanback",
+  "version": "1.0.0",
+  "description": "Inc Plan Back End",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zipit145/incplanback.git"
+  },
+  "author": "Greg Forney and Teddy Luben",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zipit145/incplanback/issues"
+  },
+  "homepage": "https://github.com/zipit145/incplanback#readme"
+}
