@@ -4,7 +4,7 @@
   "description": "Inc Plan Back End",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
