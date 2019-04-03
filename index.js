@@ -10,5 +10,10 @@ app.get('/',(req, res, next) => {
     queries.readAllUsers().then(users => res.send(users))
     //return <div>hellooo there</div>
 })
+app.get('/companies',(req, res, next) => {
+    console.log("hi")
+    queries.readAllCompanies().then(company => res.send(company))
+    //return <div>hellooo there</div>
+})
 
 app.listen(port)
