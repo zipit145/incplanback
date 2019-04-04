@@ -13,4 +13,18 @@ module.exports = {
     readAllMail(){
         return db('mail')
     },
+
+    createCompany(newCompany){
+        return db('companies').insert(newCompany).returning('*')
+    },
+    deleteCompany(id){
+        return db('companies')
+          .where('id', id)
+          .delete()
+    },
+    updateCompany(id, company){
+        return db('companies')
+            .where('id', id)
+            .update(company)
+    }
 }
