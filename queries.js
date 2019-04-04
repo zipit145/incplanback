@@ -15,7 +15,7 @@ module.exports = {
     },
 
     createCompany(newCompany){
-        return db('companies').insert(newCompany).returning('*')
+        return db('companies').insert(newCompany)
     },
     deleteCompany(id){
         return db('companies')

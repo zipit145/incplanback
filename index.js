@@ -20,6 +20,9 @@ app.get('/companies',(req, res, next) => {
 app.put('/companies/:id', (req, res, next) => {
     queries.updateCompany(req.params.id, req.body).then(company => res.json(company))
 })
+app.post('/', (req, res, next) => {
+    queries.createCompany(req.body).then(newCompany => res.json(newCompany))
+})
 
 
 app.get('/documents',(req, res, next) => {
