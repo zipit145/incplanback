@@ -7,4 +7,10 @@ module.exports = {
     readAllCompanies(){
         return db('companies')
     },
+    readAllDocuments(){
+        return db('documents')
+    },
+    readAllMail(){
+        return db('mail')
+    },
 }

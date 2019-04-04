@@ -5,15 +5,21 @@ const cors = require('cors')
 
 const port = process.env.PORT || 3001
 app.use(cors())
+
 app.get('/',(req, res, next) => {
-    console.log("hi")
     queries.readAllUsers().then(users => res.send(users))
-    //return <div>hellooo there</div>
 })
+
 app.get('/companies',(req, res, next) => {
-    console.log("hi")
     queries.readAllCompanies().then(company => res.send(company))
-    //return <div>hellooo there</div>
+})
+
+app.get('/documents',(req, res, next) => {
+    queries.readAllDocuments().then(document => res.send(document))
+})
+
+app.get('/mail',(req, res, next) => {
+    queries.readAllMail().then(document => res.send(document))
 })
 
 app.listen(port)
