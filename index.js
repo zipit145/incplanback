@@ -9,9 +9,7 @@ app.use(cors())
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}))
 
-app.get('/',(req, res, next) => {
-    queries.readAllUsers().then(users => res.send(users))
-})
+
 
 app.get('/companies',(req, res, next) => {
     queries.readAllCompanies().then(company => res.send(company))
@@ -46,9 +44,36 @@ app.delete('/documents/:id', (req, res) => {
     queries.deleteDocument(req.params.id).then(res.status(204).send())
 })
 
-
 app.get('/mail',(req, res, next) => {
-    queries.readAllMail().then(document => res.send(document))
+    queries.readAllMail().then(mail => res.send(mail))
+})
+app.get('/mail/:id',(req, res, next) => {
+    queries.readMail(req.params.id).then(mail => res.send(mail))
+})
+app.put('/mail/:id', (req, res, next) => {
+    queries.updateMail(req.params.id, req.body).then(mail => res.json(mail))
+})
+app.post('/mail', (req, res, next) => {
+    queries.createMail(req.body).then(newMail => res.json(newMail))
+})
+app.delete('/mail/:id', (req, res) => {
+    queries.deleteMail(req.params.id).then(res.status(204).send())
+})
+
+app.get('/',(req, res, next) => {
+    queries.readAllUsers().then(users => res.send(users))
+})
+app.get('/:id',(req, res, next) => {
+    queries.readUser(req.params.id).then(user => res.send(user))
+})
+app.put('/:id', (req, res, next) => {
+    queries.updateUser(req.params.id, req.body).then(user => res.json(user))
+})
+app.post('/', (req, res, next) => {
+    queries.createUser(req.body).then(newUser => res.json(newUser))
+})
+app.delete('/:id', (req, res) => {
+    queries.deleteUser(req.params.id).then(res.status(204).send())
 })
 
 app.listen(port)
