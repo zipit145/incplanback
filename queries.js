@@ -84,4 +84,10 @@ module.exports = {
             .where('id', id)
             .update(company)
     },
+
+    // readCompany(id){
+    //     return db('companies')
+
+    //         .innerJoin('mail', 'companies.id', 'mail.id')
+    // },
 }
