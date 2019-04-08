@@ -4,10 +4,10 @@ exports.up = function(knex, Promise) {
 
     function createCompaniesTable (){
         return knex.schema.createTable('companies', (company) => {
-            company.bigIncrements('id').unsigned()
+            company.bigIncrements('companyId').unsigned()
             company.string('name')
             company.string('email')
-            company.bigInteger('UserId').unsigned().index().references('id').inTable('users');
+            company.bigInteger('UserCompanyId').unsigned().index().references('id').inTable('users').onDelete('CASCADE');
         })
     }
 };

@@ -6,15 +6,15 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('mail').insert([
         {
-          name: 'Greg1',
+          name: 'mail1',
           email: 'gregbforney@gmail.com',
-          CompanyId: 1,
+          CompanyMailId: 1,
 
         },
         {
-          name: 'Greg2',
+          name: 'mail2',
           email: 'gregbforney@gmail2.com',
-          CompanyId: 1,
+          CompanyMailId: 1,
         },
       ]);
     });

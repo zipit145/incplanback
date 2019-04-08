@@ -27,19 +27,19 @@ module.exports = {
     },
     readMail(id){
         return db('mail')
-        .where('id', id)
+        .where('mailId', id)
     },
     createMail(newMail){
         return db('mail').insert(newMail)
     },
     deleteMail(id){
         return db('mail')
-          .where('id', id)
+          .where('mailId', id)
           .delete()
     },
     updateMail(id, mail){
         return db('mail')
-            .where('id', id)
+            .where('mailId', id)
             .update(mail)
     },
 
@@ -69,25 +69,29 @@ module.exports = {
     },
     readCompany(id){
         return db('companies')
-        .where('id', id)
+        .where('companyId', id)
     },
     createCompany(newCompany){
         return db('companies').insert(newCompany)
     },
     deleteCompany(id){
         return db('companies')
-          .where('id', id)
+          .where('companyId', id)
           .delete()
     },
     updateCompany(id, company){
         return db('companies')
-            .where('id', id)
+            .where('companyId', id)
             .update(company)
     },
 
     // readCompany(id){
-    //     return db('companies')
+    //     return db('mail')
+    //         .where('CompanyMailId', id)
+    //         return db('mail')
+    //         .where('CompanyMailId', id)
+    //     // return db('companies')
 
-    //         .innerJoin('mail', 'companies.id', 'mail.id')
+    //     //     .innerJoin('mail', 'companies.companyId', 'mail.CompanyMailId')
     // },
 }

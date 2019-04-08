@@ -3,10 +3,10 @@ exports.up = function(knex, Promise) {
 
     function createMailTable (){
         return knex.schema.createTable('mail', (mail) => {
-            mail.bigIncrements('id').unsigned()
+            mail.bigIncrements('mailId').unsigned()
             mail.string('name')
             mail.string('email')
-            mail.bigInteger('CompanyId').unsigned().index().references('id').inTable('companies');
+            mail.bigInteger('CompanyMailId').unsigned().index().references('companyId').inTable('companies').onDelete('CASCADE');
         })
     }
 };
