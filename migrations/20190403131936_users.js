@@ -6,8 +6,14 @@ exports.up = function(knex, Promise) {
     function createUsersTable (){
         return knex.schema.createTable('users', (user) => {
             user.bigIncrements('id').unsigned()
-            user.string('name')
+            user.string('firstName')
+            user.string('lastName')
             user.string('email')
+            user.string('password')
+            user.boolean('admin')
+            user.boolean('employee')
+            user.boolean('manager')
+            user.string('phoneNumber')
         })
     }
 };
