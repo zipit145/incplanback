@@ -8,13 +8,13 @@ exports.seed = function(knex, Promise) {
         {
           name: 'mail1',
           email: 'gregbforney@gmail.com',
-          CompanyMailId: 1,
+          companyMailId: 1,
 
         },
         {
           name: 'mail2',
           email: 'gregbforney@gmail2.com',
-          CompanyMailId: 1,
+          companyMailId: 1,
         },
       ]);
     });

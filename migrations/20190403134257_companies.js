@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
             company.bigIncrements('companyId').unsigned()
             company.string('name')
             company.string('email')
-            company.bigInteger('UserCompanyId').unsigned().index().references('id').inTable('users').onDelete('CASCADE');
+            company.bigInteger('userCompanyId').unsigned().index().references('id').inTable('users').onDelete('CASCADE');
         })
     }
 };

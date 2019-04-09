@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
             mail.bigIncrements('mailId').unsigned()
             mail.string('name')
             mail.string('email')
-            mail.bigInteger('CompanyMailId').unsigned().index().references('companyId').inTable('companies').onDelete('CASCADE');
+            mail.bigInteger('companyMailId').unsigned().index().references('companyId').inTable('companies').onDelete('CASCADE');
         })
     }
 };

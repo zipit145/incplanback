@@ -7,13 +7,13 @@ exports.seed = function(knex, Promise) {
         {
           name: 'Gregcomp1',
           email: 'gregbforney@gmail.com',
-          UserCompanyId: 1,
+          userCompanyId: 1,
 
         },
         {
           name: 'Gregcomp2',
           email: 'gregbforney@gmail2.com',
-          UserCompanyId: 1,
+          userCompanyId: 1,
         },
       ]);
     });
