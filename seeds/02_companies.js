@@ -5,14 +5,23 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('companies').insert([
         {
-          name: 'Gregcomp1',
-          email: 'gregbforney@gmail.com',
+          companyName: 'Gregcomp1',
+          companyAddress: '1234 testing lane',
+          scanAll: true,
+          firstClassAll: false,
+          scansPerYear: 500,
+          forwardingPerYear: 10,
+          mailCredits: 400.00,
           userCompanyId: 1,
-
         },
         {
-          name: 'Gregcomp2',
-          email: 'gregbforney@gmail2.com',
+          companyName: 'Gregcomp2',
+          companyAddress: '1234 testing lane',
+          scanAll: true,
+          firstClassAll: false,
+          scansPerYear: 500,
+          forwardingPerYear: 10,
+          mailCredits: 400.00,
           userCompanyId: 1,
         },
       ]);
