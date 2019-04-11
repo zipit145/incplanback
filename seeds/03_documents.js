@@ -6,14 +6,13 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('documents').insert([
         {
-          name: 'Greg1',
-          email: 'gregbforney@gmail.com',
+          documentType: '1099',
+          documentLocation: 'https://incplan.herokuapp.com/documents/1/1099.pdf',
           documentCompanyId: 1,
-
         },
         {
-          name: 'Greg2',
-          email: 'gregbforney@gmail2.com',
+          documentType: 'w-2',
+          documentLocation: 'https://incplan.herokuapp.com/documents/2/w-2.pdf',
           documentCompanyId: 1,
         },
       ]);

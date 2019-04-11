@@ -4,9 +4,9 @@ exports.up = function(knex, Promise) {
 
     function createDocumentsTable (){
         return knex.schema.createTable('documents', (document) => {
-            document.bigIncrements('id').unsigned()
-            document.string('name')
-            document.string('email')
+            document.bigIncrements('documentId').unsigned()
+            document.string('documentType')
+            document.string('documentLocation')
             document.bigInteger('documentCompanyId').unsigned().index().references('companyId').inTable('companies').onDelete('CASCADE');
         })
     }
