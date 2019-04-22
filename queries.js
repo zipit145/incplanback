@@ -48,19 +48,19 @@ module.exports = {
     },
     readDocument(id){
         return db('documents')
-        .where('id', id)
+        .where('documentId', id)
     },
     createDocument(newDocument){
         return db('documents').insert(newDocument)
     },
     deleteDocument(id){
         return db('documents')
-          .where('id', id)
+          .where('documentId', id)
           .delete()
     },
     updateDocument(id, document){
         return db('documents')
-            .where('id', id)
+            .where('documentId', id)
             .update(document)
     },
 
