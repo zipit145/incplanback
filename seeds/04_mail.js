@@ -6,14 +6,18 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('mail').insert([
         {
-          name: 'mail1',
-          email: 'gregbforney@gmail.com',
-          companyMailId: 1,
-
-        },
-        {
-          name: 'mail2',
-          email: 'gregbforney@gmail2.com',
+          mailImage: null,
+          mailEnvelopeEmployeeId: null,
+          mailEnvelopeEmployeeTime: new Date().toISOString(),
+          mailClientOptionTime: null,
+          mailScan: true,
+          mailCourier: false,
+          mailFirstClass: false,
+          mailDestroy: false,
+          mailInnerImage: null,
+          mailComplete: false,
+          mailCompleteEmployeeId: 1,
+          mailCompleteEmployeeTime: new Date().toISOString(),
           companyMailId: 1,
         },
       ]);

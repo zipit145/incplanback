@@ -4,8 +4,18 @@ exports.up = function(knex, Promise) {
     function createMailTable (){
         return knex.schema.createTable('mail', (mail) => {
             mail.bigIncrements('mailId').unsigned()
-            mail.string('name')
-            mail.string('email')
+            mail.string('mailImage')
+            mail.bigInteger('mailEnvelopeEmployeeId')
+            mail.datetime('mailEnvelopeEmployeeTime')
+            mail.datetime('mailClientOptionTime')
+            mail.boolean('mailScan');
+            mail.boolean('mailCourier');
+            mail.boolean('mailFirstClass');
+            mail.boolean('mailDestroy');
+            mail.string('mailInnerImage')
+            mail.boolean('mailComplete');
+            mail.bigInteger('mailCompleteEmployeeId')
+            mail.datetime('mailCompleteEmployeeTime')
             mail.bigInteger('companyMailId').unsigned().index().references('companyId').inTable('companies').onDelete('CASCADE');
         })
     }
