@@ -18,6 +18,9 @@ app.get('/companies',(req, res, next) => {
 app.get('/companies/:id',(req, res, next) => {
     queries.readCompany(req.params.id).then(company => res.send(company))
 })
+app.get('/usercompanies/:id',(req, res, next) => {
+    queries.readCompanyByUser(req.params.id).then(company => res.send(company))
+})
 app.put('/companies/:id', (req, res, next) => {
     queries.updateCompany(req.params.id, req.body).then(company => res.json(company))
 })

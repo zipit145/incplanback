@@ -71,6 +71,10 @@ module.exports = {
         return db('companies')
         .where('companyId', id)
     },
+    readCompanyByUser(userId){
+        return db('companies')
+        .where('userCompanyId', userId)
+    },
     createCompany(newCompany){
         return db('companies').insert(newCompany)
     },
