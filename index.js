@@ -5,9 +5,26 @@ const queries = require('./queries')
 const cors = require('cors')
 
 const port = process.env.PORT || 3001
+
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
+
 app.use(cors())
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}))
+
+bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
+        console.log("hash is" + hash)
+        bcrypt.compare(myPlaintextPassword, hash, function(err, res) {
+            console.log("compare is" + res)
+        });
+    });
+});
+
+// Load hash from your password DB.
 
 app.get('/favicon.ico', (req, res) => res.status(204));
 
